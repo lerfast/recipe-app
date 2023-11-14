@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :foods, only: [:index]
-  resources :recipes, only: [:index, :show]
+  get 'general_shopping_list/index'
 
-  get 'public_recipes/index', to: 'public_recipes#index', as: 'public_recipes_index'
+  resources :foods, only: [:index]
+  resources :recipes, only: [:index, :show] do
+    member do
+      post 'generate_shopping_list'
+      get 'generate_shopping_list'
+    end
+  end
+
+  get 'public_recipes', to: 'public_recipes#index', as: 'public_recipes_index'
 
   root 'foods#index'
 end

@@ -7,7 +7,7 @@
 <%= link_to "Public", method: :put, class: "toggle-button" %>
 
 <div>
-  <%= link_to "Generate Shopping List", "#", class: "button" %>
+  <%= link_to "Generate Shopping List", generate_shopping_list_recipe_path(@recipe), class: "button", method: :post %>
   <%= link_to "Add Ingredient", "#", class: "button" %>
 </div>
 
@@ -19,20 +19,18 @@
   <thead>
     <tr>
       <th>Food</th>
-      <th>Measurement Unit</th>
-      <th>Unit Price</th>
-      <th>Modify</th>
-      <th>Remove</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @recipe.foods.each do |food| %>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
       <tr>
-        <td><%= food.name %></td>
-        <td><%= food.measurement_unit %></td>
-        <td><%= food.price %></td>
-        <td><%= link_to "Modify" %></td>
-        <td><%= link_to "Remove" %></td>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td><%= recipe_food.food.price * recipe_food.quantity %></td>
+        <td><%= link_to "Modify" %> <%= link_to "Remove" %></td>
       </tr>
     <% end %>
   </tbody>
