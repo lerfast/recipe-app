@@ -1,0 +1,22 @@
+<h2>Public Recipes</h2>
+
+<% @public_recipes.each do |recipe| %>
+  <% if recipe.public? %>
+    <div>
+      <h3><%= recipe.name %></h3>
+
+      <div>
+        <p><strong>By:</strong> <%= recipe.user.name %></p>
+      </div>
+
+      <div>
+        <p><strong>Total Food Items:</strong> <%= recipe.foods.count %></p>
+        <p><strong>Total Price:</strong> <%= calculate_total_price(recipe.foods) %></p>
+      </div>
+
+      <div></div>
+
+      <hr>
+    </div>
+  <% end %>
+<% end %>

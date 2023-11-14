@@ -1,0 +1,39 @@
+<h2><%= @recipe.name %></h2>
+
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %></p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %></p>
+<p><strong>Description:</strong> <%= @recipe.description %></p>
+
+<%= link_to "Public", method: :put, class: "toggle-button" %>
+
+<div>
+  <%= link_to "Generate Shopping List", "#", class: "button" %>
+  <%= link_to "Add Ingredient", "#", class: "button" %>
+</div>
+
+<hr>
+
+<h3>Foods in Recipe</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Modify</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+        <td><%= link_to "Modify" %></td>
+        <td><%= link_to "Remove" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
