@@ -1,19 +1,32 @@
-<h2><%= @recipe.name %></h2>
+<head>
+  <title>Recipes</title>
+  <%= stylesheet_link_tag 'application', 'recipes_show' %>
+</head>
 
-<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %></p>
-<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %></p>
-<p><strong>Description:</strong> <%= @recipe.description %></p>
+<div class="recipe-details">
+  <h2 class="center-text"><%= @recipe.name %></h2>
 
-<%= link_to "Public", method: :put, class: "toggle-button" %>
+  <div class="recipe-info">
+    <div>
+      <p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %></p>
+      <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %></p>
+      <p> <%= @recipe.description %></p>
+    </div>
+    <div class="btn-container">
+      <p>Public</p>
+      <div class="toggle-container">
+        <button id="public-toggle" class="toggle-button"></button>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Generate Shopping List", generate_shopping_list_recipe_path(@recipe), class: "button", method: :post %>
-  <%= link_to "Add Ingredient", "#", class: "button" %>
+  <div class="recipe-actions">
+    <%= link_to "Generate Shopping List", generate_shopping_list_recipe_path(@recipe), class: "button", method: :post %>
+    <%= link_to "Add Ingredient", "#", class: "button" %>
+  </div>
 </div>
 
 <hr>
-
-<h3>Foods in Recipe</h3>
 
 <table>
   <thead>

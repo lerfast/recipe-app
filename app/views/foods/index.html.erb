@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foods</title>
+  <%= stylesheet_link_tag 'application', 'foods_index' %>
+</head>
+<body>
+
+<div class="btn-div">
+  <%= link_to "Add Food", "#", class: "button" %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -14,9 +26,12 @@
         <td><%= food.measurement_unit %></td>
         <td><%= food.price %></td>
         <td>
-          <%= link_to "Delete" %>
+          <%= link_to "Delete", "#", class: "delete-link" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+</body>
+</html>
