@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :calculate_total_price_from_recipe_foods
+  before_action :authenticate_user!
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :calculate_total_price_from_recipe_foods
 
   private
 
