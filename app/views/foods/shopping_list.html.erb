@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Shopping List</title>
-  <%= stylesheet_link_tag 'application', 'shopping_list' %>
-</head>
-<body>
-
 <h1>General Shopping List</h1>
-
 <table>
   <thead>
     <tr>
       <th>Food</th>
-      <th>Measurement Unit</th>
       <th>Quantity Needed</th>
-      <th>Unit Price</th>
-      <th>Total Price</th>
+      <th>Unit</th>
     </tr>
   </thead>
   <tbody>
-  <% @foods_needed.each do |food_needed| %>
-    <tr>
-      <td><%= food_needed.food.name %></td>
-      <td><%= food_needed.food.measurement_unit %></td>
-      <td><%= food_needed.quantity_needed - food_needed.food.quantity %></td>
-      <td><%= number_to_currency(food_needed.food.price) %></td>
-      <td><%= number_to_currency(food_needed.food.price * (food_needed.quantity_needed - food_needed.food.quantity)) %></td>
-    </tr>
-  <% end %>
-</tbody>
+    <% @foods_needed.each do |food_needed| %>
+      <tr>
+        <td><%= food_needed.name %></td>
+        <td><%= food_needed.quantity_needed %></td>
+        <td><%= food_needed.measurement_unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-</body>
-</html>
