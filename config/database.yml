@@ -61,8 +61,8 @@ development:
 test:
   <<: *default
   database: recipe_app_test
-  username: sebastianhm
-  password: sehemu
+  username: luis
+  password: luis123
   host: localhost
 
 # As with config/credentials.yml, you never want to store sensitive information,
