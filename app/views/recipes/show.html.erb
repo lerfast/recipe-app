@@ -2,7 +2,7 @@
   <title>Recipes</title>
   <%= stylesheet_link_tag 'application', 'recipes_show' %>
 </head>
-
+>
 <div class="recipe-details">
   <h2 class="center-text"><%= @recipe.name %></h2>
 
@@ -15,16 +15,18 @@
     <div class="btn-container">
       <% if @recipe.user == current_user %>
         <%= form_with(model: @recipe, url: toggle_public_recipe_path(@recipe), method: :patch) do |form| %>
-          <%= form.check_box :public %>
+        <div class="cbox">
+          <%= form.check_box :public, class: 'box' %>
           <%= form.label :public, 'Make Recipe Public' %>
+          </div>
           <%= form.submit 'Update Visibility' %>
         <% end %>
       <% end %>
     </div>
-  </div>
+  </div>  
 
   <div class="recipe-actions">
-    <%= link_to 'Generate Shopping List', generate_shopping_list_recipe_path(@recipe) %>
+    <%= link_to 'Generate Shopping List', generate_shopping_list_recipe_path(@recipe), class: "button" %>
     <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), class: "button" %>
   </div>
 </div>
