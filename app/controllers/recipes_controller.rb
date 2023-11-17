@@ -54,7 +54,6 @@ class RecipesController < ApplicationController
       }
     end
 
-
     respond_to do |format|
       format.html { render :shopping_list }
     end
