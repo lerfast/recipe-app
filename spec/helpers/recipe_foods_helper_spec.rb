@@ -1,15 +1,14 @@
+# spec/helpers/recipe_foods_helper_spec.rb
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the RecipeFoodsHelper. For example:
-#
-# describe RecipeFoodsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe RecipeFoodsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#calculate_total_food_cost" do
+    it "calculates the total cost of foods in a recipe" do
+      recipe_food1 = create(:recipe_food, quantity: 2, food: create(:food, price: 3))
+      recipe_food2 = create(:recipe_food, quantity: 1, food: create(:food, price: 5))
+      recipe_foods = [recipe_food1, recipe_food2]
+
+      expect(helper.calculate_total_food_cost(recipe_foods)).to eq(11) # 2*3 + 1*5
+    end
+  end
 end

@@ -1,15 +1,10 @@
+# spec/helpers/public_recipes_helper_spec.rb
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the PublicRecipesHelper. For example:
-#
-# describe PublicRecipesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe PublicRecipesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#format_recipe_description" do
+    it "formats the recipe description correctly" do
+      expect(helper.format_recipe_description("This is a test recipe")).to eq("Description: This is a test recipe")
+    end
+  end
 end

@@ -1,15 +1,10 @@
+# spec/helpers/foods_helper_spec.rb
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the FoodsHelper. For example:
-#
-# describe FoodsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe FoodsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#format_food_name" do
+    it "formats the name of the food correctly" do
+      expect(helper.format_food_name("apple")).to eq("Apple - Delicious")
+    end
+  end
 end

@@ -1,17 +1,17 @@
 # spec/models/food_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  it 'is valid with a name, measurement unit, price, and quantity' do
-    user = User.create!(name: 'Test User', email: 'test@example.com', password: 'password')
-    food = user.foods.build(name: 'Test Food', measurement_unit: 'kg', price: 5, quantity: 10)
-    expect(food).to be_valid
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:measurement_unit) }
+    it { should validate_numericality_of(:price).is_greater_than_or_equal_to(0) }
+    it { should validate_numericality_of(:quantity).only_integer.is_greater_than_or_equal_to(0) }
   end
 
-  it 'is invalid without a name' do
-    food = Food.new(name: nil)
-    food.valid?
-    expect(food.errors[:name]).to include("can't be blank")
+  describe 'associations' do
+    it { should belong_to(:user) }
+    it { should have_many(:recipe_foods).dependent(:destroy) }
+    it { should have_many(:recipes).through(:recipe_foods) }
   end
 end

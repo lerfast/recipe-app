@@ -1,17 +1,18 @@
 # spec/models/recipe_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  it 'is valid with a name, description, and user' do
-    user = User.create!(name: 'Test User', email: 'test@example.com', password: 'password')
-    recipe = user.recipes.build(name: 'Test Recipe', description: 'Test Description')
-    expect(recipe).to be_valid
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:description) }
+    it { should validate_numericality_of(:preparation_time).is_greater_than_or_equal_to(0) }
+    it { should validate_numericality_of(:cooking_time).is_greater_than_or_equal_to(0) }
+    it { should validate_inclusion_of(:public).in_array([true, false]) }
   end
 
-  it 'is invalid without a name' do
-    recipe = Recipe.new(name: nil)
-    recipe.valid?
-    expect(recipe.errors[:name]).to include("can't be blank")
+  describe 'associations' do
+    it { should belong_to(:user) }
+    it { should have_many(:recipe_foods).dependent(:destroy) }
+    it { should have_many(:foods).through(:recipe_foods) }
   end
 end

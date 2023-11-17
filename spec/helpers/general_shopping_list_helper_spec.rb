@@ -1,15 +1,11 @@
+# spec/helpers/general_shopping_list_helper_spec.rb
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the GeneralShoppingListHelper. For example:
-#
-# describe GeneralShoppingListHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe GeneralShoppingListHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#calculate_total_cost" do
+    it "calculates the total cost of the shopping list" do
+      shopping_list = [create(:food, price: 5), create(:food, price: 10)]
+      expect(helper.calculate_total_cost(shopping_list)).to eq(15)
+    end
+  end
 end
