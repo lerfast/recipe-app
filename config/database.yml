@@ -24,8 +24,8 @@ development:
   encoding: unicode
   database: recipe_app
   pool: 5
-  username: luis
-  password: luis123
+  username: sebastianhm
+  password: sehemu
   host: localhost
 
   # The specified database role being used to connect to PostgreSQL.
