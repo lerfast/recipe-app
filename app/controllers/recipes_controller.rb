@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :toggle_public]
+  before_action :set_recipe, only: %i[show edit update destroy toggle_public]
   before_action :authenticate_user!
 
   def index
     @recipes = current_user.recipes
   end
-  
+
   def new
     @recipe = current_user.recipes.build
   end
@@ -45,7 +45,7 @@ class RecipesController < ApplicationController
 
   def generate_shopping_list
     @recipe = Recipe.find(params[:id])
-    
+
     @shopping_list_items = @recipe.recipe_foods.includes(:food).map do |recipe_food|
       {
         food_name: recipe_food.food.name,
@@ -54,13 +54,12 @@ class RecipesController < ApplicationController
       }
     end
 
-   
+
     respond_to do |format|
       format.html { render :shopping_list }
-      
     end
   end
-  
+
   def shopping_list
     @ingredients = @recipe.recipe_foods.includes(:food)
   end
@@ -74,6 +73,4 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name, :description, :public, :preparation_time, :cooking_time)
   end
-
-  
 end
