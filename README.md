@@ -207,6 +207,9 @@ If you like this project give it a star ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## ❓ FAQ <a name="faq"></a>
+
+Here are the most common questions about this project.
 
 ### `Can we use the application as an organization`
 
