@@ -11,7 +11,5 @@ RSpec.feature 'User registration', type: :feature do
     fill_in 'Password', with: 'securepassword'
     fill_in 'Password confirmation', with: 'securepassword'
     click_button 'Sign up'
-
-    
   end
 end

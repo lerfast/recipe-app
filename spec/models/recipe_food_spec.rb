@@ -1,4 +1,3 @@
-# spec/models/recipe_food_spec.rb
 require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do

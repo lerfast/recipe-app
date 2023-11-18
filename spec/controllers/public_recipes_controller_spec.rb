@@ -3,8 +3,8 @@ require 'rails_helper'
 
 RSpec.describe PublicRecipesController, type: :controller do
   render_views
-  describe "GET #index" do
-    it "displays public recipes" do
+  describe 'GET #index' do
+    it 'displays public recipes' do
       user = create(:user)
       sign_in user
 
@@ -14,7 +14,7 @@ RSpec.describe PublicRecipesController, type: :controller do
         cooking_time: 60,
         description: 'Test Description',
         public: true,
-        user: user
+        user:
       )
 
       get :index

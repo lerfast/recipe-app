@@ -1,8 +1,9 @@
 require 'rails_helper'
-include Warden::Test::Helpers
 
 RSpec.feature 'Food management', type: :feature do
-  let(:user) { create(:user, name: 'Test User', email: 'test@example.com', password: 'password', password_confirmation: 'password') }
+  let(:user) do
+    create(:user, name: 'Test User', email: 'test@example.com', password: 'password', password_confirmation: 'password')
+  end
 
   background do
     login_as(user, scope: :user)
@@ -15,7 +16,7 @@ RSpec.feature 'Food management', type: :feature do
     fill_in 'Price', with: '0.5'
     click_button 'Create Food'
 
-    
+
     expect(page).to have_content 'Banana'
   end
 end

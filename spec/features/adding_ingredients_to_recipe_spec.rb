@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Adding ingredients to a recipe', type: :feature do
   let(:user) { create(:user) }
   let!(:recipe) do
-    create(:recipe, name: 'Test Recipe', preparation_time: 30, cooking_time: 60, description: 'Test Description', public: true, user: user)
+    create(:recipe, name: 'Test Recipe', preparation_time: 30, cooking_time: 60, description: 'Test Description',
+                    public: true, user:)
   end
   let!(:food) do
-    create(:food, name: 'Test Food', measurement_unit: 'kg', price: 5, quantity: 10, user: user)
+    create(:food, name: 'Test Food', measurement_unit: 'kg', price: 5, quantity: 10, user:)
   end
 
   before do
@@ -21,6 +22,6 @@ RSpec.describe 'Adding ingredients to a recipe', type: :feature do
 
     expect(page).to have_current_path(recipe_path(recipe))
     expect(page).to have_content('Test Food')
-    expect(page).to have_content('2') 
+    expect(page).to have_content('2')
   end
 end

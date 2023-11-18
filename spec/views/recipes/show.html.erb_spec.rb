@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "recipes/show", type: :view do
+RSpec.describe 'recipes/show', type: :view do
   before(:each) do
     user = FactoryBot.create(:user)
     allow(view).to receive(:current_user).and_return(user)
 
-    @recipe = FactoryBot.create(:recipe, user: user)
+    @recipe = FactoryBot.create(:recipe, user:)
     assign(:recipe, @recipe)
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/#{@recipe.name}/)
     expect(rendered).to match(/#{@recipe.preparation_time}/)
