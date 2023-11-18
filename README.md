@@ -129,7 +129,7 @@ To run the tests ensure you are in the directory containing the test files.
 1. Run the tests using the following command:
 
 ```
-rspec
+bundle exec rspec
 ```
 
 3. All tests should pass without any errors or failures, ensuring that the code and its methods are functioning correctly.
@@ -144,6 +144,11 @@ rspec
 - [GitHub](https://github.com/lerfast)
 - [Twitter](https://twitter.com/lerfast)
 - [LinkedIn](https://www.linkedin.com/in/luis-emilio-rojas-rojas-6ba90a8a/)
+
+👤 **Micronaut Sebastián Hernandez**
+
+- GitHub: [@shm04](https://github.com/shm04)
+- LinkedIn: [Sebastian Hernandez](https://www.linkedin.com/in/sebastian-hernandez-munoz/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
