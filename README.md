@@ -59,6 +59,18 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Key Features <a name="key-features"></a>
+
+The key features of the application are:
+
+- Create, Read and Delete posts and comments
+- Authentication with Devise.
+- Authorization rules for users
+- API endpoints.
+- API documentation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 The result should look similar to the following data model (this is an Entity Relationship Diagram that you are already familiar with).
 ![ERD Recipe App](https://github.com/microverseinc/curriculum-rails/raw/main/recipe-app/images/recipe_erd_2_members.png)
@@ -166,6 +178,12 @@ bundle exec rspec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Dynamic list creating by the users using the interface**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -189,6 +207,23 @@ If you like this project give it a star ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## ❓ FAQ <a name="faq"></a>
+
+Here are the most common questions about this project.
+
+### `Can we use the application as an organization`
+
+### `Answer`
+Yes! Make sure you give us credit of the application. 
+
+## `Where can we reach out to you ?`
+
+### `Answer`
+You can reach out to the organisation team by email [luisemiliorojas@hotmail.com](luisemiliorojas@hotmail.com) 
+
+[`Back to top`](#readme-top)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
