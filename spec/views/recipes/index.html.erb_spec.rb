@@ -4,7 +4,6 @@ RSpec.describe 'recipes/index', type: :view do
   before(:each) do
     user = create(:user)
 
-
     assign(:recipes, [
              Recipe.create!(
                name: 'Recipe 1',

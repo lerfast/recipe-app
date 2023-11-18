@@ -18,7 +18,6 @@ RSpec.feature 'Recipe creation', type: :feature do
     check 'recipe_public'
     click_button 'Create Recipe'
 
-
     expect(page).to have_content 'Test Recipe'
   end
 end

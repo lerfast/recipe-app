@@ -16,7 +16,6 @@ RSpec.feature 'Food management', type: :feature do
     fill_in 'Price', with: '0.5'
     click_button 'Create Food'
 
-
     expect(page).to have_content 'Banana'
   end
 end
